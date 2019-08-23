@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>表格批量导入</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <!-- 引入 Bootstrap -->
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="form-group">
+            <div class="col-md-2 control-label"><span class="label label-danger" style="font-size: medium">选择文件:</span></div>
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <input readonly="readonly" id='location' class="form-control" onclick="$('#i-file').click();">
+                    <label class="input-group-btn">
+                        <input type="button" id="i-check" value="浏览文件" class="btn btn-primary" onclick="$('#i-file').click();">
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form id="if" enctype="multipart/form-data" action="phonenumber/upload" method="post">
+                    <input type="file" name="fileUpload" id="i-file"  accept=".xls, .xlsx" onchange="$('#location').val($('#i-file').val());" style="display: none">
+                    <input type="submit" class="btn btn-success" onclick="uploadFile()" value="上传"></input>
+                </form>
+            </div>
+        </div>
+        <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    </body>
+    <style type="text/css">
+        .form-group{
+            width: 50%;
+            height: 60px;
+            margin: 70px 26%;
+        }
+        .btn-success{
+            width: 25%;
+            height: 36px;
+            margin: 10px 46%;
+        }
+        .input-group{
+            width:  130%;
+        }
+
+    </style>
+    <script type="text/javascript">
+    </script>
+</html>
